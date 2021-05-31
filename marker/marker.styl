@@ -1,0 +1,53 @@
+*
+	padding 0
+	margin 0
+	min-height 30px
+	min-width @min-height
+	box-sizing border-box
+	list-style-type none
+	transiton all 300ms
+
+.marker
+	padding 10px
+	border-radius @padding
+
+_marker-sh(color, i)
+	border 3px solid alpha(color, 20%*i)
+	background-color lightness(color, 100% - 5%*i)
+
+[marker_display='block']
+	_marker-sh black, 2
+
+[marker_display='inline-block']
+	_marker-sh orange, 2
+
+[marker_display='list-item']
+	_marker-sh blue, 2
+
+[marker_display='flex']
+	_marker-sh green, 2
+
+[marker_display='grid']
+	_marker-sh maroon, 2
+
+[marker_display='inline']
+	background-color alpha(yellow, 30%)
+
+[marker_position='relative']
+	box-shadow 0 0 5px 0 black inset
+
+[marker_position='absolute']
+[marker_position='fixed']
+	opacity 0.7
+	border-radius 0
+
+[marker_position='absolute']
+	box-shadow 0 0 20px black
+
+[marker_position='fixed']
+	box-shadow 0 0 20px purple
+
+[marker_transform]
+	border-style dashed
+	border-width 5px
+	opacity 0.7
